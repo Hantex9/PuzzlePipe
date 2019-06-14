@@ -4,6 +4,6 @@
 </p>
 
 
-This is my submission for the WWDC 2018 Scholarship, a procedural puzzle game to keep problem-solving skills in training.
+Puzzle Pipe is a procedural puzzle game that allows you to keep problem-solving skills in training. The purpose of the game is to connect two main pipes that are highlighted in a different color through other pipes in order to create a path that allows the two main pipes to communicate. Once you have created a valid route you can go to the next round. This game was born as a playground delivered to the <strong>WWDC18</strong> scholarship.
 
-Video: [YouTube](https://youtu.be/SG972hlY8Ds)
+<h1 align="center">[YouTube Video](https://youtu.be/SG972hlY8Ds)</h1>
