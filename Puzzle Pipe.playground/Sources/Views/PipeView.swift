@@ -62,10 +62,10 @@ public class PipeView: UIView {
         let velocity = recognizer.velocity(in: self)
         var position: Direction = .none
         self.isFirstTouch = false
-        if fabs(velocity.x) > fabs(velocity.y) {
+        if abs(velocity.x) > abs(velocity.y) {
           self.positionMoving = .xAxis
           position = (velocity.x < 0) ? .left : .right
-        } else if fabs(velocity.y) > fabs(velocity.x) {
+        } else if abs(velocity.y) > abs(velocity.x) {
           self.positionMoving = .yAxis
           position = (velocity.y < 0) ? .up : .down
         }

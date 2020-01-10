@@ -119,7 +119,7 @@ class ProgressBarView: UIView {
     animation.fromValue = self.progressView.frame.size.width
     animation.toValue = 0
     animation.isRemovedOnCompletion = false
-    animation.fillMode = kCAFillModeForwards
+    animation.fillMode = CAMediaTimingFillMode.forwards
     animation.duration = self.time/Double(GameSettings.difficulty.rawValue + 1)
     self.progressView.layer.add(animation, forKey: "reducingWidth")
     

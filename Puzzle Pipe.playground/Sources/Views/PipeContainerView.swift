@@ -125,8 +125,8 @@ public class PipeContainerView: UIView {
     }
 
     let shapeLayer = CAShapeLayer()
-    shapeLayer.lineCap = kCALineCapRound
-    shapeLayer.lineJoin = kCALineCapRound
+    shapeLayer.lineCap = CAShapeLayerLineCap.round
+    shapeLayer.lineJoin = CAShapeLayerLineJoin.round
     shapeLayer.path = aPath.cgPath
     shapeLayer.strokeColor = UIColor.white.cgColor
     

@@ -151,7 +151,7 @@ fileprivate extension PathGenerator {
   ///   - startPipe: The pipe where to start
   ///   - goalPipe: The pipe where to end
   /// - Returns: Array of Pipe which is the path found, nil if the path is not been found
-  fileprivate func findPath(from startPipe: Pipe, to goalPipe: Pipe) -> [Pipe]? {
+    func findPath(from startPipe: Pipe, to goalPipe: Pipe) -> [Pipe]? {
     
     var calculatedPath = [Pipe]()
     var mainPoints = [int2]()
@@ -215,7 +215,7 @@ fileprivate extension PathGenerator {
   ///   - startPoint: The start Point
   ///   - diagonalsAllowed: If the diagonals are allowd in the matrix
   ///   - excludedPoint
-  fileprivate func createValidGoalPoint(from startPoint: PipePoint, diagonalsAllowed: Bool, excluding excludedPoint: PipePoint?) -> PipePoint{
+  func createValidGoalPoint(from startPoint: PipePoint, diagonalsAllowed: Bool, excluding excludedPoint: PipePoint?) -> PipePoint{
     
     let goalPoint = self.selectRandomPoint(isSpecialPoint: true, excluding: [startPoint, excludedPoint])
     //If diagonals points are not allowed
@@ -232,7 +232,7 @@ fileprivate extension PathGenerator {
   /// - Parameters:
   ///   - path: The path where to generate the empty point
   /// - Returns: A PipePoint where is created the empty Point
-  fileprivate func generateEmptyPoint(from path: [Pipe]) -> PipePoint {
+  func generateEmptyPoint(from path: [Pipe]) -> PipePoint {
     let row = Int.random(min: 0, max: pathSize - 1)
     let col = Int.random(min: 0, max: pathSize - 1)
     let pipePoint = PipePoint(row: row, col: col)
@@ -249,7 +249,7 @@ fileprivate extension PathGenerator {
   ///   - pipePoint: The current point of the Pipe
   ///   - excludedPoints: The points to avoid
   /// - Returns: PipePoint pointed
-  fileprivate func createPointedPoint(from pipePoint: PipePoint, excluding excludedPoints: [PipePoint?]? = nil) -> PipePoint {
+  func createPointedPoint(from pipePoint: PipePoint, excluding excludedPoints: [PipePoint?]? = nil) -> PipePoint {
     var pointsAvailables: [PipePoint] = [PipePoint]()
     let upPoint = PipePoint(row: pipePoint.row - 1, col: pipePoint.col)
     let downPoint = PipePoint(row: pipePoint.row + 1, col: pipePoint.col)
@@ -289,7 +289,7 @@ fileprivate extension PathGenerator {
   ///   - excludedPoints: Points to exclude
   ///   - isGoalPoint: It marks if the point is the goal point or not
   /// - Returns: A PipePoint which is in bounds
-  fileprivate func createPointsInBounds(from pipePoint: PipePoint, excluding excludedPoints: [PipePoint?]? = nil, isGoalPoint: Bool = false) -> PipePoint {
+  func createPointsInBounds(from pipePoint: PipePoint, excluding excludedPoints: [PipePoint?]? = nil, isGoalPoint: Bool = false) -> PipePoint {
     
     let selectedPoint = createPointedPoint(from: pipePoint, excluding: excludedPoints)
     
@@ -315,7 +315,7 @@ fileprivate extension PathGenerator {
   ///   - isSpecialPoint: Boolean value that marks if it is a specialPoint
   ///   - excludedPoints: Points to exclude during the selection
   /// - Returns: PipePoint selected
-  fileprivate func selectRandomPoint(isSpecialPoint: Bool = false, excluding excludedPoints: [PipePoint?]? = nil) -> PipePoint {
+  func selectRandomPoint(isSpecialPoint: Bool = false, excluding excludedPoints: [PipePoint?]? = nil) -> PipePoint {
     let row = Int.random(min: 0, max: pathSize - 1)
     let col = Int.random(min: 0, max: pathSize - 1)
     let pipePoint = PipePoint(row: row, col: col)
@@ -339,7 +339,7 @@ fileprivate extension PathGenerator {
   ///   - pipePoint: The point where to create the obstacle
   ///   - avoid points: Points used for checking if the point is in a good position to be placed
   /// - Returns: Type of an Obstacle created
-  fileprivate func generateObstacle(at pipePoint: PipePoint, avoid points: [PipePoint]) -> ObstacleType {
+  func generateObstacle(at pipePoint: PipePoint, avoid points: [PipePoint]) -> ObstacleType {
     
     var randomSelection: ObstacleType = ObstacleType(rawValue: Int.random(min: 0, max: 1))!
     
